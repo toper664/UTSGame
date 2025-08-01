@@ -8,7 +8,6 @@ public class Boy : MonoBehaviour
     Animator anim;
     public Rigidbody foodPrefab;
     [SerializeField] float mvtSpeed = 40;
-    [SerializeField] float foodSpeed = 20;
 
     public static int Sign(float f)
     {
@@ -53,7 +52,6 @@ public class Boy : MonoBehaviour
         {
             anim.SetTrigger("throw");
             Rigidbody food = Instantiate(foodPrefab, new Vector3(rb.position.x, rb.position.y, rb.position.z), Quaternion.identity);
-            food.velocity = transform.TransformDirection(Vector3.forward * foodSpeed);
         }
     }
 }
